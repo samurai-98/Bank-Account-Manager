@@ -12,6 +12,7 @@ public class Customer {
         this.name = name;
         this.accountNum = accountNum;
         this.userTransactions = emptyVector;
+        this.balance = 0.0;
     }
 
     public String getName() {
