@@ -11,6 +11,24 @@ public class Management {
         this.vecSize = 0;
     }
 
+    public boolean binarySearch(int accountNum) {
+        int low = 0;
+        int high = customerVec.size() - 1;
+
+        while(low <= high) {
+            int mid = (low + high) / 2;
+            if (accountNum == customerVec.get(mid).getAccountNum()) {
+                return true;
+            } else if (accountNum < customerVec.get(mid).getAccountNum()) {
+                high = mid -1;
+            } else {
+                low = mid + 1;
+            }
+        }
+
+        return false;
+    }
+
     public void addCustomer(String name) {
         int newAccountNum = nextAccountNum;
         Customer newUser = new Customer(name, newAccountNum);
